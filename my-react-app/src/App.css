@@ -1,0 +1,148 @@
+:root {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color-scheme: dark;
+  --app-bg-gradient: radial-gradient(circle at top left, #27314d, #0b1220 60%);
+  --app-bg-color: #0b1220;
+
+  --text-primary: #f8fbff;
+  --text-secondary: #505862;
+  --text-muted: #8593a3;
+
+  --text-sub-header: rgba(195, 204, 214, 1);
+  --profile-sub-header: rgba(164, 164, 164, 1);
+  --text-mertic-label: #f8fbff;
+
+  --surface-card: linear-gradient(
+    290.01deg,
+    rgba(179, 152, 255, 0.08) 42.6%,
+    rgba(255, 255, 255, 0) 103.07%
+  );
+
+  --surface-border: transparent;
+
+  --card-border-gradient: radial-gradient(
+      69.43% 69.43% at 50% 50%,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(21, 21, 21, 0) 100%
+    )
+    1;
+
+  --icon-button-bg: rgba(53, 59, 65, 1);
+  --icon-button-color: rgba(220, 232, 255, 0.85);
+  --icon-button-hover-bg: rgba(41, 53, 88, 0.9);
+  --icon-button-active-bg: rgba(75, 103, 181, 0.85);
+  --icon-button-active-color: #f8fbff;
+  --icon-button-active-shadow: 0 10px 18px rgba(16, 28, 60, 0.45);
+
+  --pill-default-color: #e8f1ff;
+  --pill-default-bg: rgba(116, 134, 174, 0.2);
+  --pill-default-hover: rgba(116, 134, 174, 0.4);
+
+  --stat-text: rgba(215, 224, 255, 0.8);
+  --stat-icon: rgba(139, 156, 210, 0.9);
+
+  --profile-metric-bg: rgba(27, 29, 33, 1);
+  --profile-metric-icon-bg: rgba(32, 45, 74, 0.35);
+  --profile-metric-text: rgba(233, 240, 255, 0.92);
+
+  --carousel-cta-bg: rgba(27, 29, 33, 1);
+  --carousel-cta-hover-bg: rgba(44, 62, 104, 0.95);
+  --carousel-action-bg: rgba(12, 18, 32, 0.75);
+  --carousel-action-hover-bg: rgba(20, 28, 46, 0.9);
+  --carosuel-action-border: rgba(53, 59, 65, 1);
+
+  --scrollbar-thumb: rgba(38, 53, 88, 0.7);
+
+  --avatar-shadow: 0 10px 22px rgba(10, 16, 28, 0.4);
+  background: var(--app-bg-gradient, var(--app-bg-color, #ffffff));
+  color: var(--text-primary, #1c2540);
+  transition: background 250ms ease, color 200ms ease;
+}
+
+body[data-theme="light"] {
+  color-scheme: light;
+  --app-bg-gradient: linear-gradient(180deg, #f9fbff 0%, #eef2ff 100%);
+  --app-bg-color: #f4f6ff;
+
+  --card-border-gradient: none;
+  --text-primary: #1c2540;
+  --text-secondary: #545f7f;
+  --text-muted: #505862;
+
+  --text-sub-header: rgba(80, 88, 98, 1);
+  --profile-sub-header: rgba(80, 88, 98, 1);
+
+  --text-mertic-label: #353b41;
+
+  --surface-card: #rgba(255, 255, 255, 1);
+  --surface-border: rgba(222, 228, 235, 1);
+
+  --icon-button-bg: rgba(222, 228, 235, 1);
+  --icon-button-color: #6a7682;
+  --icon-button-hover-bg: rgba(210, 220, 255, 1);
+  --icon-button-active-bg: rgba(83, 113, 255, 0.18);
+  --icon-button-active-color: #2f3c66;
+  --icon-button-active-shadow: 0 8px 16px rgba(58, 90, 203, 0.25);
+
+  --pill-default-color: #4f5d7a;
+  --pill-default-bg: rgba(80, 110, 160, 0.14);
+  --pill-default-hover: rgba(80, 110, 160, 0.22);
+
+  --stat-text: #6a7682;
+  --stat-icon: #6a7682;
+
+  --profile-metric-bg: white;
+  --profile-metric-icon-bg: rgba(205, 214, 240, 0.4);
+  --profile-metric-text: #2d3a5f;
+
+  --carousel-cta-bg: rgba(255, 255, 255, 1);
+  --carousel-cta-hover-bg: rgba(196, 207, 247, 1);
+  --carousel-action-bg: rgba(232, 236, 248, 0.9);
+  --carousel-action-hover-bg: rgba(210, 218, 242, 1);
+  --carosuel-action-border: rgba(222, 228, 235, 1);
+
+  --scrollbar-thumb: rgba(190, 200, 230, 0.8);
+
+  --avatar-shadow: 0 12px 24px rgba(45, 75, 145, 0.15);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.app-shell {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cards-stack {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 0 auto;
+  font-family: outfit;
+}
+
+@media (min-width: 768px) {
+  #root {
+    padding: 2.5rem;
+  }
+}

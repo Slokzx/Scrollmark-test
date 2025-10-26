@@ -1,0 +1,40 @@
+.expandable-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.expandable-text__content {
+  margin: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  line-clamp: var(--line-clamp, 2);
+}
+
+.expandable-text__toggle {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: Outfit;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.expandable-text__toggle:focus-visible {
+  outline: 2px solid var(--focus-outline, currentColor);
+  outline-offset: 2px;
+}
+
+.expandable-text.is-expanded .expandable-text__content {
+  display: block;
+  overflow: visible;
+}

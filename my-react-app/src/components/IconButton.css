@@ -1,0 +1,28 @@
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
+  border: 1px solid var(--icon-button-bg);
+  cursor: pointer;
+  color: #8593a3;
+  background-color: var(--profile-metric-bg);
+}
+
+.icon-button:focus-visible {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.icon-button--lg {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.icon-button--lg svg {
+  width: 16px;
+  height: 16px;
+}

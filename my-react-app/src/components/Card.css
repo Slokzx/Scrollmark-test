@@ -1,0 +1,25 @@
+.card {
+  --card-padding: 1.2rem;
+  width: 100%;
+  max-width: 375px;
+  background: var(--surface-card);
+  border-radius: 26px;
+  padding: 1.2rem 0.8rem;
+  box-shadow: var(--surface-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid var(--surface-border);
+  border-image: var(--card-border-gradient);
+  border-image-slice: 1;
+  transition: background-color 200ms ease, box-shadow 200ms ease,
+    border-color 200ms ease, color 200ms ease;
+  backdrop-filter: blur(55.76351547241211px);
+}
+
+@media (min-width: 768px) {
+  .card {
+    --card-padding: 1.5rem;
+    max-width: 420px;
+  }
+}

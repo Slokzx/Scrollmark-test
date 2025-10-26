@@ -1,0 +1,76 @@
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--stat-text);
+}
+
+.stat svg {
+  color: var(--stat-icon);
+}
+
+.stat-value {
+  font-weight: 500;
+}
+
+.stat--trend {
+  font-weight: 600;
+  gap: 0.5rem;
+}
+
+.stat--trend svg {
+  color: currentColor;
+}
+
+.stat--trend.stat--up {
+  color: #09b55b;
+}
+
+.stat--trend.stat--down {
+  color: #ff7d7d;
+}
+
+.trend-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: trendFloatUp 2.4s ease-in-out infinite;
+}
+
+.trend-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.trend-icon--down {
+  animation-name: trendFloatDown;
+}
+
+.trend-icon--down svg {
+  transform: rotate(180deg);
+}
+
+@keyframes trendFloatUp {
+  0% {
+    transform: translate(-3px, 3px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(3px, -3px);
+  }
+}
+
+@keyframes trendFloatDown {
+  0% {
+    transform: translate(3px, -3px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-3px, 3px);
+  }
+}
