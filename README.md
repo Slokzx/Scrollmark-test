@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# Scrollmark Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Scrollable social insights concept built with React, TypeScript, and Vite. The app renders a creator post card and a profile intelligence card that share a synchronized light/dark theme toggle, interactive stats, and a lightweight carousel for top-performing content.
 
-Currently, two official plugins are available:
+## Features
+- Two high-fidelity cards highlighting post engagement and creator performance fed by `src/data/post.json`.
+- Global light/dark theme switch with persistent body-level variables to restyle every surface.
+- Accessible UI primitives (`IconButton`, `PillButton`, `ExpandableText`, `Stat`, `TrendStat`) with keyboard-friendly controls and descriptive `aria` labels.
+- Scrollable media carousel with smooth paging buttons and call-to-action slot.
+- Pure CSS styling with gradient surfaces, shadows, and responsive layout tuned for desktop and tablet breakpoints.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 19 with functional components and hooks.
+- TypeScript data contracts in `src/types.ts`.
+- Vite 7 build tooling and dev server.
+- PostCSS-compatible global CSS modules for theming.
 
-## React Compiler
+## Getting Started
+1. Install dependencies: `npm install`
+2. Start the local dev server: `npm run dev`
+3. Build for production: `npm run build`
+4. Preview the production build locally: `npm run preview`
+5. Lint the codebase: `npm run lint`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+```text
+src/
+  components/      Reusable UI blocks (cards, buttons, stats, carousel)
+  data/post.json   Mock social analytics payload powering the UI
+  App.tsx          Entry composition of the post and profile cards
+  types.ts         Typed contracts for all data consumed in the app
+public/            Static assets served as-is by Vite
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Customizing the Demo
+- Update `src/data/post.json` to experiment with alternative creators, metrics, and imagery.
+- Extend component variants in `src/components` to add new stats or buttons.
+- Adjust global theming tokens in `src/App.css` to explore different palettes or spacing scales.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Deployment
+- The project ships with a `deploy` script targeting GitHub Pages (`npm run deploy`) after a production build. Update the `homepage` field in `package.json` if you host it elsewhere.
